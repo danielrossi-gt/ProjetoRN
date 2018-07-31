@@ -42,9 +42,11 @@ const App = () => {
 
   return (
     <View style={estiloView}>
+
       <Text style={estiloTexto}>A</Text>
       <Text style={estiloTexto2}>B</Text>
       <Text style={estiloTexto}>C</Text>
+ 
     </View>
 
   );
