@@ -4,47 +4,35 @@ import { Text, AppRegistry, View } from 'react-native';
 
 //Formatações
 const Estilos = {
-  estiloTexto: {
-    fontSize: 40,
-    backgroundColor: '#08509B',
-    //height: 60,
-    //width: 60
-//    paddingTop: 20,
-//    color: '#FFF',
-//    textAlign: 'center',
-//    fontWeight: 'bold' // pode usar valoes entre 100 e 900
-//    textDecorationLine: 'underline',
-//    fontStyle: 'italic'
-//    shadowColor: '#000',
-//    shadowOffset: { width: 0, height: 2 },
-//    shadowOpacity: 0.4,
-//    shadowRadius: 2
+  
+  principal: {
+    flex: 1, //1:1
+    backgroundColor: 'cornflowerblue'
   },
-    estiloTexto2: {
-    fontSize: 40,
-    backgroundColor: '#2A48FA',
-    //height: 60,
-    //width: 60
+  topo: {
+    flex: 2, //1:11
+    backgroundColor: 'brown'
   },
-  estiloView: {
-    backgroundColor: 'skyblue',
-    height: 600,
-    justifyContent: 'space-around',
-    alignItems: 'stretch',
-    flexDirection: 'column'
+  conteudo: {
+    flex: 8, //8:11
+    backgroundColor: 'darkblue'
+  },  
+  rodape: {
+    flex: 1, //1:11
+    backgroundColor: 'orangered'
   }
 
 };
 
 //Criar o componente
 const App = () => {
-  const { estiloTexto, estiloTexto2, estiloView } = Estilos;
+  const { principal, topo, conteudo, rodape } = Estilos;
 
   return (
-    <View style={estiloView}>
-      <Text style={estiloTexto}>A</Text>
-      <Text style={estiloTexto2}>B</Text>
-      <Text style={estiloTexto}>C</Text>
+    <View style={principal}>
+      <Text style={topo}>Topo</Text>
+      <Text style={conteudo}>Conteúdo</Text>
+      <Text style={rodape}>Rodapé</Text>
     </View>
 
   );
