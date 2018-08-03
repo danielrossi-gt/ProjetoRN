@@ -17,7 +17,7 @@ export default class app3 extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Testando GitHub Desktop
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
