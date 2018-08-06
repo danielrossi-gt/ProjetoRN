@@ -1,3 +1,4 @@
+//Importação de componentes
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -7,53 +8,49 @@ import {
   Button
 } from 'react-native';
 
+//Estilos
 const Estilos = {
 
   principal: {
     paddingTop: 30
   }
 
-}
-
-class MeuComponente extends Component {
-  render() {
-    return (
-      <View>
-        <Text>{this.props.teste}</Text>
-
-      </View>
-    );
-  }
-
-}
+};
 
 const { principal } = Estilos;  
 
+
+//Definição da classe da Aplicação
 class app3 extends Component {
 
+  //Construtor
   constructor(props) {
     super(props);
     this.state = {
-      texto : 'Texto Teste 2'
-    };
+      escolhaUsuario : ''
+    }
   }
 
-  alteraTexto() {
-    this.setState( { texto : 'Outra coisa' } );
+  //Seta a escolha do usuário
+  jokenpo(escolha) {
+    this.setState( { escolhaUsuario : escolha } );
   }
-
+  
+  //Renderização
   render() {
     return (
       <View style={principal}>
-        <MeuComponente teste={this.state.texto}></MeuComponente>
-        <Button 
-          title='Botão'
-          onPress={ () => { this.alteraTexto() }}
-        />
+        <Text>Escolha do Computador</Text>
+        <Text>Escolha do Usuário: {this.state.escolhaUsuario}</Text>
+        <Text>Resultado</Text>
+        <Button title='pedra' onPress={ () => {this.jokenpo('pedra')} } />
+        <Button title='papel' onPress={ () => {this.jokenpo('papel')} } />
+        <Button title='tesoura' onPress={ () => {this.jokenpo('tesoura')} } />
       </View>
     );
   }
 
 }
 
+//Registro de componentes
 AppRegistry.registerComponent('app3', () => app3);
