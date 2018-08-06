@@ -25,7 +25,7 @@ class app3 extends Component {
   }
 
   //Seta a escolha do usuário
-  jokenpo(escolha) {
+  jokenpo(escolhaUsuario) {
     //gerar número aleatório (0,1,2)
     const numAleatorio = Math.floor(Math.random() * 3);
     let escolhaComputador = '';
@@ -39,50 +39,48 @@ class app3 extends Component {
     }
 
     if (escolhaComputador === 'pedra') {
-      if (escolha === 'pedra') {
+      if (escolhaUsuario === 'pedra') {
         resultado = 'Empate';
       }
 
-      if (escolha === 'papel') {
+      if (escolhaUsuario === 'papel') {
         resultado = 'Você ganhou';
       }
 
-      if (escolha === 'tesoura') {
+      if (escolhaUsuario === 'tesoura') {
         resultado = 'Você perdeu';
       }
     }
 
     if (escolhaComputador === 'papel') {
-      if (escolha === 'pedra') {
+      if (escolhaUsuario === 'pedra') {
         resultado = 'Você perdeu';
       }
 
-      if (escolha === 'papel') {
+      if (escolhaUsuario === 'papel') {
         resultado = 'Empate';
       }
 
-      if (escolha === 'tesoura') {
+      if (escolhaUsuario === 'tesoura') {
         resultado = 'Você ganhou';
       }
     }
 
     if (escolhaComputador === 'tesoura') {
-      if (escolha === 'pedra') {
+      if (escolhaUsuario === 'pedra') {
         resultado = 'Você ganhou';
       }
 
-      if (escolha === 'papel') {
+      if (escolhaUsuario === 'papel') {
         resultado = 'Você perdeu';
       }
 
-      if (escolha === 'tesoura') {
+      if (escolhaUsuario === 'tesoura') {
         resultado = 'Empate';
       }
     }
 
-    this.setState({ escolhaUsuario: escolha,
-                    escolhaComputador: escolhaComputador,
-                    resultado: resultado });
+    this.setState({ escolhaUsuario, escolhaComputador, resultado });
   }
   
   //Renderização
