@@ -1,53 +1,59 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
-export default class app3 extends Component {
+const Estilos = {
+
+  principal: {
+    paddingTop: 30
+  }
+
+}
+
+class MeuComponente extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Testando GitHub Desktop no Windows
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View>
+        <Text>{this.props.teste}</Text>
+
       </View>
     );
   }
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+const { principal } = Estilos;  
+
+class app3 extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      texto : 'Texto Teste 2'
+    };
+  }
+
+  alteraTexto() {
+    this.setState( { texto : 'Outra coisa' } );
+  }
+
+  render() {
+    return (
+      <View style={principal}>
+        <MeuComponente teste={this.state.texto}></MeuComponente>
+        <Button 
+          title='Botão'
+          onPress={ () => { this.alteraTexto() }}
+        />
+      </View>
+    );
+  }
+
+}
 
 AppRegistry.registerComponent('app3', () => app3);
