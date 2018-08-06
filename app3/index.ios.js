@@ -31,7 +31,6 @@ class app3 extends Component {
     let escolhaComputador = '';
     let resultado = '';
 
-
     switch (numAleatorio) {
       case 0: escolhaComputador = 'pedra'; break;
       case 1: escolhaComputador = 'papel'; break;

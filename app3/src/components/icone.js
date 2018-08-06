@@ -41,7 +41,7 @@ class Icone extends Component {
 }
 
 const styles = StyleSheet.create({
-  icone:  {
+  icone: {
     alignItems: 'center',
     marginBottom: 20,
     
