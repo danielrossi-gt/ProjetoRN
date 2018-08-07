@@ -10,9 +10,9 @@ class ListaItens extends Component {
   render() {
     return (
       <View>
-     	<Itens />
-     	<Itens />
-     	<Itens />
+		<Itens />
+		<Itens />
+		<Itens />
       </View>
       
     );
