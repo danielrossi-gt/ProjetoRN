@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import {
+    Text,
     View
   } from 'react-native';
 
-import Itens from './itens.js';
-
-class ListaItens extends Component {
+class Itens extends Component {
 
   render() {
     return (
       <View>
-     	<Itens />
-     	<Itens />
-     	<Itens />
+        <Text>Detalhes do Item</Text>
       </View>
       
     );
   }
 }
 
-export default ListaItens;
+export default Itens;
