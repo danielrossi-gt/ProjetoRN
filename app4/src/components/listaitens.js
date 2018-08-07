@@ -32,7 +32,8 @@ class ListaItens extends Component {
 
 const styles = StyleSheet.create({
   topo: {
-    marginTop: 20 
+    marginTop: 20,
+    backgroundColor: '#DDD' 
   }
 });
 
