@@ -31,10 +31,14 @@ export default class CenaPrincipal extends Component {
         </View>
    
         <View style={styles.menu}>
-          <Image source={menuCliente} />
-          <Image source={menuContato} />
-          <Image source={menuEmpresa} />
-          <Image source={menuServico} />
+          <View style={styles.menuGrupo}>
+            <Image style={styles.imgMenu} source={menuCliente} />
+            <Image style={styles.imgMenu} source={menuContato} />
+          </View>
+          <View style={styles.menuGrupo}>
+            <Image style={styles.imgMenu} source={menuEmpresa} />
+            <Image style={styles.imgMenu} source={menuServico} />
+          </View>
         </View>
 
       </View>
@@ -49,7 +53,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   menu: {
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 20
+  },
+  menuGrupo: {
+    flexDirection: 'row'
+  },
+  imgMenu: {
+    margin: 15
   }
 
 });
