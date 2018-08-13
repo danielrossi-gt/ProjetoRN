@@ -20,9 +20,9 @@ export default class CenaContatos extends Component {
       <View style={styles.fundo}>
         <StatusBar
           //hidden={true} 
-          backgroundColor='#CCC'
+          backgroundColor='#61BD8C'
         />
-        <BarraNavegacao voltar navigator={this.props.navigator} />
+        <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='#61BD8C'/>
 
         <View style={styles.cabecalho}>
           <Image source={detalheContatos} />
