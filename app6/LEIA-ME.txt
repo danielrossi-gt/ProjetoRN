@@ -1,0 +1,5 @@
+Arquivos atualizados até e inclusive a aula "#APP6 - Transformando a cena Principal em um componente".
+
+*Bastante atenção com o arquivo index.android.js, nesta etapa do projeto o return da função render não está implementando, ou seja, a aplicação não está funcional, ela será ajustada nas aulas seguintes.
+
+Bons estudos :D
