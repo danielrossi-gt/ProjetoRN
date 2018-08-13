@@ -34,6 +34,8 @@ export default class CenaPrincipal extends Component {
         <View style={styles.menu}>
           <View style={styles.menuGrupo}>
             <TouchableHighlight
+              undelayColor={'#B9C941'}
+              activeOpacity={0.3}
               onPress={() => {
                 this.props.navigator.push({ id: 'clientes' });
               }}
@@ -41,15 +43,19 @@ export default class CenaPrincipal extends Component {
               <Image style={styles.imgMenu} source={menuCliente} />
             </TouchableHighlight>
             <TouchableHighlight
+              undelayColor={'#61BD8C'}
+              activeOpacity={0.3}
               onPress={() => {
                 this.props.navigator.push({ id: 'contatos' });
               }}
             >
-            <Image style={styles.imgMenu} source={menuContato} />
+              <Image style={styles.imgMenu} source={menuContato} />
             </TouchableHighlight>
           </View>
           <View style={styles.menuGrupo}>
             <TouchableHighlight
+              undelayColor={'#EC7148'}
+              activeOpacity={0.3}
               onPress={() => {
                 this.props.navigator.push({ id: 'empresa' });
               }}
@@ -57,11 +63,13 @@ export default class CenaPrincipal extends Component {
               <Image style={styles.imgMenu} source={menuEmpresa} />
             </TouchableHighlight>
             <TouchableHighlight
+              undelayColor={'#19D1C8'}
+              activeOpacity={0.3}
               onPress={() => {
                 this.props.navigator.push({ id: 'servicos' });
               }}
             >            
-            <Image style={styles.imgMenu} source={menuServico} />
+              <Image style={styles.imgMenu} source={menuServico} />
             </TouchableHighlight>
           </View>
         </View>
