@@ -1,6 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
+import Entrada from './Entrada';
+import Operacao from './Operacao';
+import Comando from './Comando';
 
 /* Notação normal 
 export default function(props) {
@@ -44,7 +47,9 @@ pode ficar assim:
 
 const Painel = props => (
 	<View>
-		<Text>Painel</Text>
+		<Entrada />
+		<Operacao />
+		<Comando />
 	</View>
 )
 

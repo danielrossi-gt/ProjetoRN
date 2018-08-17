@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import Visor from './Visor';
 
 
 /* Notação normal 
@@ -43,9 +44,7 @@ pode ficar assim:
 */
 
 const Resultado = props => (
-	<View>
-		<Text>Resultado</Text>
-	</View>
+	<Visor />
 )
 
 /* quando a chave = atributo não precisa fazer mais assim:
