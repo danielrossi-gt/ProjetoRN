@@ -4,8 +4,8 @@ import Numero from './Numero';
 
 export default props => (
 	<View style={styles.numeros}>
-		<Numero />
-		<Numero />
+		<Numero num={props.num1} />
+		<Numero num={props.num2} />
 	</View>
 );
 
