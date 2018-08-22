@@ -44,7 +44,7 @@ pode ficar assim:
 */
 
 const Resultado = props => (
-	<Visor />
+	<Visor resultado={props.resultado} />
 )
 
 /* quando a chave = atributo não precisa fazer mais assim:
