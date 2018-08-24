@@ -12,7 +12,12 @@ class App extends Component {
 	componentWillMount() {
 	  // Initialize Firebase
 	  var config = {
-	    // Configuração do Firebase aqui
+	    apiKey: "AIzaSyD1UgH-ALNyIgwalfdt5FATfIcionqQdRY",
+	    authDomain: "configuracaofirebasereactdr.firebaseapp.com",
+	    databaseURL: "https://configuracaofirebasereactdr.firebaseio.com",
+	    projectId: "configuracaofirebasereactdr",
+	    storageBucket: "configuracaofirebasereactdr.appspot.com",
+	    messagingSenderId: "1088198732747"
 	  };
 	  firebase.initializeApp(config);
 	}
