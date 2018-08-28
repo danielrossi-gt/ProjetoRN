@@ -24,7 +24,7 @@ class App extends Component {
 
 	cadastrarUsuario() {
 		let email = "danielrossi@gmail.com";
-		let senha = '1'
+		let senha = '123456'
 		const usuario = firebase.auth();
 
 		usuario.createUserWithEmailAndPassword(
@@ -44,6 +44,61 @@ class App extends Component {
 		);
 
 
+	}
+
+	verificarUsuarioLogado() {
+
+		const usuario = firebase.auth();
+		/*const usuarioAtual = usuario.currentUser;
+
+		if (usuarioAtual) {
+			alert("Usuário está logado.")
+		}
+		else {
+			alert("Usuário não está logado.")
+		}*/
+
+		usuario.onAuthStateChanged(
+			(usuarioAtual) => {
+
+				if (usuarioAtual) {
+					alert("Usuário está logado.")
+				}
+				else {
+					alert("Usuário não está logado.")
+				}
+
+			}	
+		);
+
+	}
+
+	deslogarUsuario() {
+		const usuario = firebase.auth();
+		usuario.signOut();
+	}
+
+	logarUsuario() {
+
+		let email = "danielrossi2@gmail.com";
+		let senha = 'abcdef';
+		const usuario = firebase.auth();
+
+		usuario.signInWithEmailAndPassword(
+			email,
+			senha
+		).catch(
+			(erro) => {
+				//erro.code, erro.message
+				var mensagemErro = "";
+
+				if (erro.code = "auth/wrong-password") {
+					mensagemErro = "A senha está errada.";
+				}
+
+				alert(mensagemErro);
+			}
+		);
 	}
 
 /*	salvarDados() {
@@ -95,12 +150,27 @@ class App extends Component {
 				/>
 				
 				<Button
-					onPress= { () => { this.listarDados(); }}
-					title="Listar Dados"
+					onPress= { () => { this.verificarUsuarioLogado(); }}
+					title="Verificar usuário logado"
 					color="#841584"
 					accessibilityLabel="Listar dados"
 				/>				
 				
+
+				<Button
+					onPress= { () => { this.deslogarUsuario(); }}
+					title="Deslogar usuario"
+					color="#841584"
+					accessibilityLabel="Listar dados"
+				/>				
+
+				<Button
+					onPress= { () => { this.logarUsuario(); }}
+					title="Logar usuario"
+					color="#841584"
+					accessibilityLabel="Listar dados"
+				/>					
+
 			</View>
 		);
 	}
