@@ -11,8 +11,8 @@ const formLogin = props => {
                 <Text style={{ fontSize: 25 }}>WhatsApp Clone</Text>
             </View>
             <View style={ styles.corpo }>
-                <TextInput style={ styles.input } placeholder="E-mail" />
-                <TextInput style={ styles.input } placeholder="Senha" />
+                <TextInput value={ props.email } style={ styles.input } placeholder="E-mail" />
+                <TextInput value={ props.senha }style={ styles.input } placeholder="Senha" />
                 <TouchableHighlight
                     onPress={ () => Actions.formCadastro() }
                 >

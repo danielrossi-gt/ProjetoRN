@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button, TextInput, View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
-export default props => (
+const formCadastro = props => (
     <View style={ styles.viewPrincipal } >
         <View style={ styles.viewForm } > 
-            <TextInput style={ styles.input } placeholder="Nome" />
-            <TextInput style={ styles.input } placeholder="E-Mail" />
-            <TextInput style={ styles.input } placeholder="Senha" />
+            <TextInput value={props.nome} style={ styles.input } placeholder="Nome" />
+            <TextInput value={props.email} style={ styles.input } placeholder="E-Mail" />
+            <TextInput value={props.senha} style={ styles.input } placeholder="Senha" />
         </View>
         <View style={ styles.viewCadastrar }>
             <View style= { styles.viewButton } >
@@ -15,6 +16,14 @@ export default props => (
         </View>
     </View>
 );
+
+const mapStateToProps = state => (
+    {
+        nome: state.AutenticacaoReducer.nome,
+        email: state.AutenticacaoReducer.email,
+        senha: state.AutenticacaoReducer.senha   
+    }
+)
 
 const styles = StyleSheet.create({
 	viewPrincipal: {
@@ -36,3 +45,5 @@ const styles = StyleSheet.create({
         backgroundColor: "#115E54"
     }
 });
+
+export default connect(mapStateToProps, null)(formCadastro);
