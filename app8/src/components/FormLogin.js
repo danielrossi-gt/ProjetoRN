@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, Button, TouchableHighlight, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import { modificaEmail } from '../actions/AutenticacaoActions';
+import { modificaEmail, modificaSenha } from '../actions/AutenticacaoActions';
 
 const formLogin = props => {
     console.log(props);
@@ -13,7 +13,7 @@ const formLogin = props => {
             </View>
             <View style={ styles.corpo }>
                 <TextInput value={ props.email } style={ styles.input } placeholder="E-mail" onChangeText={ texto => props.modificaEmail(texto) } />
-                <TextInput value={ props.senha }style={ styles.input } placeholder="Senha" />
+                <TextInput value={ props.senha }style={ styles.input } placeholder="Senha" onChangeText={ texto => props.modificaSenha(texto)}/>
                 <TouchableHighlight
                     onPress={ () => Actions.formCadastro() }
                 >
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default connect(mapStateToProps, { modificaEmail })(formLogin);
+export default connect(mapStateToProps, { modificaEmail, modificaSenha })(formLogin);
