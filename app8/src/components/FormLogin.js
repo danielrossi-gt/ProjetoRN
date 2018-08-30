@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, Button, TouchableHighlight, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
+import { modificaEmail } from '../actions/AutenticacaoActions';
 
 const formLogin = props => {
     console.log(props);
@@ -11,7 +12,7 @@ const formLogin = props => {
                 <Text style={{ fontSize: 25 }}>WhatsApp Clone</Text>
             </View>
             <View style={ styles.corpo }>
-                <TextInput value={ props.email } style={ styles.input } placeholder="E-mail" />
+                <TextInput value={ props.email } style={ styles.input } placeholder="E-mail" onChangeText={ texto => props.modificaEmail(texto) } />
                 <TextInput value={ props.senha }style={ styles.input } placeholder="Senha" />
                 <TouchableHighlight
                     onPress={ () => Actions.formCadastro() }
@@ -36,8 +37,6 @@ const mapStateToProps = state => (
         senha: state.AutenticacaoReducer.senha
     }
 )
-
-export default connect(mapStateToProps, null)(formLogin);
 
 const styles = StyleSheet.create({
 	principal: {
@@ -67,3 +66,5 @@ const styles = StyleSheet.create({
     }
 
 });
+
+export default connect(mapStateToProps, { modificaEmail })(formLogin);
