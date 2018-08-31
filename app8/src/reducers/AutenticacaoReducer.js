@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
-    nome: 'teste',
-    email: 'teste',
-    senha: '123'
+    nome: '',
+    email: '',
+    senha: ''
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -19,4 +19,5 @@ export default (state = INITIAL_STATE, action) => {
     }
 
     return state;
+
 }

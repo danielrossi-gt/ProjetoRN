@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, Button, TouchableHighlight, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, TouchableHighlight, StyleSheet, ImageBackground } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { modificaEmail, modificaSenha } from '../actions/AutenticacaoActions';
@@ -7,27 +7,29 @@ import { modificaEmail, modificaSenha } from '../actions/AutenticacaoActions';
 const formLogin = props => {
     console.log(props);
     return (
-        <View style={ styles.principal }>
-            <View style={ styles.topo }>
-                <Text style={{ fontSize: 25 }}>WhatsApp Clone</Text>
+        <ImageBackground style={{ flex:1}} source={require("../img/bg.png")} >
+            <View style={ styles.principal }>
+                <View style={ styles.topo }>
+                    <Text style={ styles.titulo }>WhatsApp Clone</Text>
+                </View>
+                <View style={ styles.corpo }>
+                    <TextInput value={ props.email } style={ styles.input } placeholder="E-mail" placeholderTextColor="#FFF" onChangeText={ texto => props.modificaEmail(texto) } />
+                    <TextInput secureTextEntry value={ props.senha } style={ styles.input } placeholder="Senha" placeholderTextColor="#FFF" onChangeText={ texto => props.modificaSenha(texto)}/>
+                    <TouchableHighlight
+                        onPress={ () => Actions.formCadastro() }
+                    >
+                        <Text style={ styles.texto }>
+                            Ainda não tem cadastro? Cadastre-se!
+                        </Text>
+                    </TouchableHighlight>
+                </View>
+                <View style={ styles.rodape } >
+                    <View style={ styles.viewButton }>
+                        <Button title="Acessar" color="white" onPress={() => false} />
+                    </View>        
+                </View>
             </View>
-            <View style={ styles.corpo }>
-                <TextInput value={ props.email } style={ styles.input } placeholder="E-mail" onChangeText={ texto => props.modificaEmail(texto) } />
-                <TextInput value={ props.senha }style={ styles.input } placeholder="Senha" onChangeText={ texto => props.modificaSenha(texto)}/>
-                <TouchableHighlight
-                    onPress={ () => Actions.formCadastro() }
-                >
-                    <Text style={ styles.texto }>
-                        Ainda não tem cadastro? Cadastre-se!
-                    </Text>
-                </TouchableHighlight>
-            </View>
-            <View style={ styles.rodape } >
-                <View style={ styles.viewButton }>
-                    <Button title="Acessar" color="white" onPress={() => false} />
-                </View>        
-            </View>
-        </View>
+        </ImageBackground>
     );
 }
 
@@ -56,14 +58,22 @@ const styles = StyleSheet.create({
     },
     input: {
         fontSize: 20, 
-        height: 45
+        height: 45,
+        color: "#FFF"
     },
     texto: {
-        fontSize: 20
+        fontSize: 20,
+        color: "#FFF"
     },
     viewButton: {
         backgroundColor: "#115E54"
+    },
+    titulo: {
+        fontSize: 25,
+        backgroundColor: "transparent",
+        color: "#FFF"
     }
+    
 
 });
 

@@ -1,21 +1,23 @@
 import React from 'react';
-import { Button, TextInput, View, StyleSheet } from 'react-native';
+import { Button, TextInput, View, StyleSheet, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 import { modificaEmail, modificaSenha, modificaNome } from '../actions/AutenticacaoActions';
 
 const formCadastro = props => (
-    <View style={ styles.viewPrincipal } >
-        <View style={ styles.viewForm } > 
-            <TextInput value={props.nome} style={ styles.input } placeholder="Nome" onChangeText={ texto => props.modificaNome(texto) } />
-            <TextInput value={props.email} style={ styles.input } placeholder="E-Mail" onChangeText={ texto => props.modificaEmail(texto) } />
-            <TextInput value={props.senha} style={ styles.input } placeholder="Senha" onChangeText={ texto => props.modificaSenha(texto) }/>
-        </View>
-        <View style={ styles.viewCadastrar }>
-            <View style= { styles.viewButton } >
-                <Button title="Cadastrar" onPress={ () => false } />
+    <ImageBackground  style={{ flex:1}} source={require("../img/bg.png")} >
+        <View style={ styles.viewPrincipal } >
+            <View style={ styles.viewForm } > 
+                <TextInput value={props.nome} style={ styles.input } placeholder="Nome" placeholderTextColor="#FFF" onChangeText={ texto => props.modificaNome(texto) } />
+                <TextInput value={props.email} style={ styles.input } placeholder="E-Mail" placeholderTextColor="#FFF" onChangeText={ texto => props.modificaEmail(texto) } />
+                <TextInput secureTextEntry value={props.senha} style={ styles.input } placeholder="Senha" placeholderTextColor="#FFF" onChangeText={ texto => props.modificaSenha(texto) }/>
+            </View>
+            <View style={ styles.viewCadastrar }>
+                <View style= { styles.viewButton } >
+                    <Button title="Cadastrar" onPress={ () => false } />
+                </View>
             </View>
         </View>
-    </View>
+    </ImageBackground>
 );
 
 const mapStateToProps = state => (
@@ -40,7 +42,8 @@ const styles = StyleSheet.create({
     },
     input: {
         fontSize: 20, 
-        height: 45
+        height: 45,
+        color: "#FFF"
     },
     viewButton: {
         backgroundColor: "#115E54"
