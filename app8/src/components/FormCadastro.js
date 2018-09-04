@@ -49,6 +49,7 @@ class formCadastro extends Component {
                         <View style= { styles.viewButton } >
                             <Button 
                                 title="Cadastrar" 
+                                color="white"
                                 onPress={ () => this._cadastraUsuario() } />
                         </View>
                     </View>
